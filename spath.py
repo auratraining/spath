@@ -113,8 +113,7 @@ def populate_adjecencts(route_map, map_table):
         get_adjecent_nodes(route_map, map_table, r, c)
 
 def dump_data(map_table):
-    print (json.dumps(map_table))
-
+    print (json.dumps(map_table, sort_keys=True, indent=4))
 def main():
     map_table = {
             "Entrance" : [],
@@ -129,6 +128,7 @@ def main():
     populate_edges(route_map, map_table)
     print (map_table)  
     populate_adjecencts(route_map, map_table)
+    dump_data(map_table)
 
 if (__name__ == "__main__"):
     main()
